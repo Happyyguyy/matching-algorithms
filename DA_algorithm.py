@@ -32,10 +32,6 @@ class SetofAgents(set):
 
 
 def DA_algorithm(proposers, receivers):
-    if not isinstance(proposers, SetofAgents):
-        raise TypeError("proposers must be class:SetofAgents")
-    if not isinstance(receivers, SetofAgents):
-        raise TypeError("recievers must be class:SetofAgents")
 
     matches = set()  #set of final matches
     while proposers:
