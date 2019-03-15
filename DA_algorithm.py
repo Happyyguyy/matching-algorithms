@@ -18,17 +18,6 @@ class Agent:
         self._pref = pref
         self.__pref = pref
 
-    @property
-    def set(self):
-        return self._set
-
-    @set.setter
-    def set(self, new_set):
-        if (isinstance(new_set, SetofAgents) or new_set == None):
-            self._set = new_set
-        else:
-            raise TypeError("Set must be of class:SetofAgents or None")
-
     def reset(self):
         self._pref == self.__pref
 
