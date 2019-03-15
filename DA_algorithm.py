@@ -1,8 +1,9 @@
-class Agents:
+class Agent:
     def __init__(self, name, set=None, pref=None, match=None):
         self.name = name
         self.set = set
-        self.pref = pref
+        self.__pref = pref
+        self._pref = pref
         self.match = match
 
     def __repr__(self):
@@ -14,13 +15,17 @@ class Agents:
 
     @pref.setter
     def pref(self, pref):
-        self.pref = pref
+        self._pref = pref
         self.__pref = pref
+
+    @property
+    def set(self):
+        return self._set
 
     @set.setter
     def set(self, new_set):
-        if (isinstance(set, SetofAgents) or set == None):
-            self.set = set
+        if (isinstance(new_set, SetofAgents) or new_set == None):
+            self._set = new_set
         else:
             raise TypeError("Set must be of class:SetofAgents or None")
 
