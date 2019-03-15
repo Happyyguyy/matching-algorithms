@@ -23,3 +23,14 @@ class Agents:
             self.set = set
         else:
             raise TypeError("Set must be of class:SetofAgents or None")
+
+
+class SetofAgents(set):
+    def __init__(self, *args):
+        args = list(args)
+        if all(isinstance(each, Agent) for each in args):
+            for each in args:
+                each.set = self
+            super().__init__(args)
+        else:
+            raise TypeError("args must be list of agents")
