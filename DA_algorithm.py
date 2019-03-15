@@ -32,7 +32,6 @@ class Agent:
 
 class SetofAgents(set):
     def __init__(self, *args):
-        args = list(args)
         if all(isinstance(each, Agent) for each in args):
             for each in args:
                 each.set = self
