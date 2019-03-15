@@ -29,6 +29,8 @@ class Agent:
         else:
             raise TypeError("Set must be of class:SetofAgents or None")
 
+    def reset(self):
+        self._pref == self.__pref
 
 class SetofAgents(set):
     def __init__(self, *args):
